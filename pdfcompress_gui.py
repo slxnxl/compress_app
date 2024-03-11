@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import filedialog, messagebox
 from pypdf import PdfReader, PdfWriter
+import fitz
 
 class PDFCompressorApp:
     def __init__(self, master):
@@ -39,6 +40,7 @@ class PDFCompressorApp:
             self.label_filename.config(text=f"Выбран файл: {file_path}")
             self.file_path = file_path
 
+    # TODO протестировать PyMuPDF и PyPDF2
     def compress_pdf(self):
         if hasattr(self, 'file_path'):
             quality = self.scale_quality.get()
