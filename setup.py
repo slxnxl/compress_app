@@ -3,7 +3,7 @@ from setuptools import setup
 APP = ['pdfcompress_gui.py']
 DATA_FILES = []
 OPTIONS = {
-    'argv_emulation': True,
+    # 'argv_emulation': True,
 }
 
 setup(
