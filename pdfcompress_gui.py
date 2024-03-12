@@ -1,8 +1,12 @@
+import os
+import time
 import tkinter as tk
 from tkinter import filedialog, messagebox
 from pypdf import PdfReader, PdfWriter
-import fitz
+import logging
 
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
+logging.basicConfig(filename='app.log', level=logging.DEBUG)
 class PDFCompressorApp:
     def __init__(self, master):
         self.master = master
@@ -61,6 +65,9 @@ class PDFCompressorApp:
                 messagebox.showinfo("Готово", "PDF успешно сжат!")
 
 if __name__ == "__main__":
+    logging.debug("Starting the application.")
     root = tk.Tk()
     app = PDFCompressorApp(root)
     root.mainloop()
+    time.sleep(15)
+    logging.debug("Application finished.")
